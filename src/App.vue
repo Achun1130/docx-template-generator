@@ -4,7 +4,9 @@ import { renderDocx } from "./utils/renderDocx";
 import { FormDocx } from "./models/formDocx.model";
 import { UploadFile, UploadRawFile } from "element-plus";
 
-const docxPath = ref("/template.docx");
+const docxPath = ref(
+  `${process.env.NODE_ENV === "production" ? "/docx-template-generator/" : "/"}template.docx`,
+);
 
 /**
  * 上傳檔案
